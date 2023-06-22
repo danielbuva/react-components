@@ -21,6 +21,7 @@
   display: flex;
   justify-content: center;
   color: #ffffff;
+  cursor: pointer;
   position: relative;
   user-select: none;
 }
@@ -31,5 +32,4 @@
 
 .close-button:hover {
   background-color: #202020;
-  cursor: pointer;
 }
