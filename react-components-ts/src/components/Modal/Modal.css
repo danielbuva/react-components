@@ -1,0 +1,35 @@
+#modal {
+  width: 600px;
+  height: 650px;
+  border-radius: 12px;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  border: 1px solid;
+}
+
+#modal-header {
+  position: relative;
+  left: 0;
+  transform: translate(20%, -50%);
+}
+
+.close-button {
+  all: unset;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  position: relative;
+  user-select: none;
+}
+
+.close-button:active {
+  outline: none;
+}
+
+.close-button:hover {
+  background-color: #202020;
+  cursor: pointer;
+}
