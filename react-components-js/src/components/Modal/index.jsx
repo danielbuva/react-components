@@ -100,19 +100,20 @@ CloseButton.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export function ModalOpenButton({ onOpen, modalBody, modalHeader }) {
+export function ModalOpenButton({ onOpen, body, header, buttonText }) {
   const { showModal } = useModalContext();
   const handleClick = () => {
     if (onOpen) {
       onOpen();
-      showModal(modalBody, modalHeader);
     }
+    showModal(body, header);
   };
-  return <button onClick={handleClick}></button>;
+  return <button onClick={handleClick}>{buttonText}</button>;
 }
 
 ModalOpenButton.propTypes = {
-  onOpen: PropTypes.func.isRequired,
-  modalBody: PropTypes.node.isRequired,
-  modalHeader: PropTypes.string,
+  body: PropTypes.node.isRequired,
+  header: PropTypes.string,
+  onOpen: PropTypes.func,
+  buttonText: PropTypes.string,
 };

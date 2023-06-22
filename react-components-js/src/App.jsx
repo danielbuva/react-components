@@ -1,24 +1,14 @@
-import { useModalContext } from "./hooks/useModalContext";
 import "./App.css";
+import { ModalOpenButton } from "./components/Modal";
 
 function App() {
-  const { showModal } = useModalContext();
-
   return (
     <>
-      <button
-        onClick={() => {
-          showModal(
-            <>
-              yoooooooooooooooooooo0000000000000000000000000000000000000000000000000000000000000000000000000000000
-              world
-            </>,
-            "Hello World"
-          );
-        }}
-      >
-        show modal
-      </button>
+      <ModalOpenButton
+        body={<>yoooo</>}
+        buttonText="show modal"
+        header="yo"
+      />
     </>
   );
 }

@@ -105,21 +105,23 @@ function CloseButton({ onClose }: { onClose: () => void }) {
   );
 }
 
-export function ModelOpenButton({
+export function ModalOpenButton({
+  body,
+  buttonText,
+  header,
   onOpen,
-  modalBody,
-  modalHeader,
 }: {
+  body: ReactNode;
+  buttonText: string;
+  header: string;
   onOpen?: () => void;
-  modalBody: ReactNode;
-  modalHeader: string;
 }) {
   const { showModal } = useModalContext();
   const handleClick = () => {
     if (onOpen) {
       onOpen();
-      showModal(modalBody);
     }
+    showModal(body, header);
   };
-  return <button></button>;
+  return <button onClick={handleClick}>{buttonText}</button>;
 }
