@@ -1,14 +1,18 @@
 import "./App.css";
-import { ModalOpenButton } from "./components/Modal";
+import Input from "./components/Input";
+import { ShowModalButton } from "./components/Modal";
 
 function App() {
   return (
     <>
-      <ModalOpenButton
+      <ShowModalButton
         body={<>yoooo</>}
         buttonText="show modal"
         header="yo"
       />
+      <Input id="name" placeholder="Name" />
+      <Input id="email" placeholder="Email" />
+      <Input id="phone" placeholder="Phone" />
     </>
   );
 }

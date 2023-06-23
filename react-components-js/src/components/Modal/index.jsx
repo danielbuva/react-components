@@ -100,7 +100,7 @@ CloseButton.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export function ModalOpenButton({ onOpen, body, header, buttonText }) {
+export function ShowModalButton({ onOpen, body, header, buttonText }) {
   const { showModal } = useModalContext();
   const handleClick = () => {
     if (onOpen) {
@@ -111,7 +111,7 @@ export function ModalOpenButton({ onOpen, body, header, buttonText }) {
   return <button onClick={handleClick}>{buttonText}</button>;
 }
 
-ModalOpenButton.propTypes = {
+ShowModalButton.propTypes = {
   body: PropTypes.node.isRequired,
   header: PropTypes.string,
   onOpen: PropTypes.func,

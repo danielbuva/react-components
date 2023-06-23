@@ -5,6 +5,7 @@
   overflow-x: hidden;
   word-wrap: break-word;
   border: 1px solid;
+  background-color: #000;
 }
 
 #modal-header {

@@ -105,7 +105,7 @@ function CloseButton({ onClose }: { onClose: () => void }) {
   );
 }
 
-export function ModalOpenButton({
+export const ShowModalButton = ({
   body,
   buttonText,
   header,
@@ -115,7 +115,7 @@ export function ModalOpenButton({
   buttonText: string;
   header: string;
   onOpen?: () => void;
-}) {
+}) => {
   const { showModal } = useModalContext();
   const handleClick = () => {
     if (onOpen) {
@@ -124,4 +124,4 @@ export function ModalOpenButton({
     showModal(body, header);
   };
   return <button onClick={handleClick}>{buttonText}</button>;
-}
+};
