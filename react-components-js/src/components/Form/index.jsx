@@ -28,7 +28,7 @@ const GetBody = (
   page = formData
 ) => {
   const items = [];
-
+  let i = 0;
   for (const key in page) {
     const handleOnChange = (e) => {
       if (e.target) {
@@ -42,9 +42,8 @@ const GetBody = (
     };
 
     items.push(
-      <div style={{ position: "relative" }}>
+      <div key={key} style={{ position: "relative" }}>
         <Input
-          key={key}
           id={key}
           placeholder={key[0].toUpperCase() + key.slice(1)}
           value={formData[key]?.value ?? ""}
@@ -54,9 +53,10 @@ const GetBody = (
         {errors[key] && <p className="error">{errors[key]}</p>}
       </div>
     );
+    i++;
   }
 
-  return <FormPage>{items}</FormPage>;
+  return <FormPage key={i}>{items}</FormPage>;
 };
 
 const Form = ({ formState }) => {
@@ -88,7 +88,6 @@ const Form = ({ formState }) => {
     let pass = true;
 
     const body = formData.pages[page];
-    console.log({ body, formData });
     for (const key in body) {
       if (body[key].msg) {
         if (!formData[key]?.value) {
