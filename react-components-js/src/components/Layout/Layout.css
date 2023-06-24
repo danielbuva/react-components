@@ -17,8 +17,12 @@
   justify-content: flex-end;
 }
 
-#content-left {
+#content-left-container {
   width: 275px;
+}
+
+#content-left {
+  position: fixed;
 }
 
 #logo-div {
@@ -39,8 +43,12 @@
   height: 100%;
 }
 
-#content-right {
+#content-right-container {
   width: 350px;
+}
+
+#content-right {
+  position: fixed;
 }
 
 @media only screen and (max-width: 1298px) {

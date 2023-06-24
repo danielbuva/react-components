@@ -6,18 +6,22 @@ const Layout = ({ children }) => {
   return (
     <div id="layout">
       <div id="left">
-        <div id="content-left">
-          <div id="logo-div">
-            <GoalieLogo />
-          </div>
-          <div>
-            <NavButtons />
+        <div id="content-left-container">
+          <div id="content-left">
+            <div id="logo-div">
+              <GoalieLogo />
+            </div>
+            <div>
+              <NavButtons />
+            </div>
           </div>
         </div>
       </div>
       <div id="main">{children}</div>
       <div id="right">
-        <div id="content-right">right</div>
+        <div id="content-right-container">
+          <div id="content-right"> dani buva </div>
+        </div>
       </div>
     </div>
   );
