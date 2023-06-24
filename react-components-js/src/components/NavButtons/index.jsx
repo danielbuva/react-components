@@ -60,7 +60,7 @@ NavOption.propTypes = {
 NavButton.propTypes = {
   boxSize: PropTypes.string,
   icon: PropTypes.string.isRequired,
-  padding: PropTypes.number.string.isRequired,
+  padding: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
   to: PropTypes.string,
 };
