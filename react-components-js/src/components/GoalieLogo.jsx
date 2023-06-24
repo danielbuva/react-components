@@ -18,7 +18,11 @@ const GoalieLogo = () => {
     <img
       alt="Goalie Logo"
       src={colors[index]}
-      style={{ width: "42px", cursor: "pointer", padding: 2 }}
+      style={{
+        cursor: "pointer",
+        padding: "10px 2px 2px 2px",
+        width: "42px",
+      }}
       onClick={() => {
         setIndex(randomInt(0, 3));
       }}
