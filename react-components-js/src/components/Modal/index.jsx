@@ -50,7 +50,7 @@ export const ModalProvider = ({ children }) => {
         e.clientY < dimensions.top ||
         e.clientY > dimensions.bottom
       ) {
-        modalRef.current.close();
+        closeModal();
       }
     }
   };
@@ -64,10 +64,10 @@ export const ModalProvider = ({ children }) => {
         title="Close"
       >
         <div style={{ display: "flex" }} tabIndex={-1}>
-          <CloseButton onClose={closeModal} />
+          <CloseButton />
           <h2 id="modal-header">{modalHeader}</h2>
         </div>
-        {content}
+        <div id="content">{content}</div>
       </dialog>
       {children}
     </ModalContext.Provider>
@@ -78,9 +78,13 @@ ModalProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-function CloseButton({ onClose }) {
+function CloseButton() {
+  const { closeModal } = useModalContext();
+  const handleClick = () => {
+    closeModal();
+  };
   return (
-    <button className="close-button" onClick={onClose}>
+    <button className="close-button" onClick={handleClick}>
       <img
         src={X}
         alt="close menu"
@@ -95,10 +99,6 @@ function CloseButton({ onClose }) {
     </button>
   );
 }
-
-CloseButton.propTypes = {
-  onClose: PropTypes.func.isRequired,
-};
 
 export function ShowModalButton({ onOpen, body, header, buttonText }) {
   const { showModal } = useModalContext();
