@@ -57,12 +57,7 @@ export const ModalProvider = ({ children }) => {
 
   return (
     <ModalContext.Provider value={value}>
-      <dialog
-        id="modal"
-        ref={modalRef}
-        onClick={closeOnOutsideClick}
-        title="Close"
-      >
+      <dialog id="modal" ref={modalRef} onClick={closeOnOutsideClick}>
         <div style={{ display: "flex" }} tabIndex={-1}>
           <CloseButton />
           <h2 id="modal-header">{modalHeader}</h2>
