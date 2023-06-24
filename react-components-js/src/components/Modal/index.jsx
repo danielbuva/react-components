@@ -1,9 +1,8 @@
-import X from "./assets/X.svg";
+import CLoseX from "./icons/X.jsx";
 import "./Modal.css";
 
 import { useModalContext } from "../../hooks/useModalContext";
 import { createContext, useRef, useState } from "react";
-import PropTypes from "prop-types";
 
 export const ModalContext = createContext(null);
 
@@ -69,10 +68,6 @@ export const ModalProvider = ({ children }) => {
   );
 };
 
-ModalProvider.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
 function CloseButton() {
   const { closeModal } = useModalContext();
   const handleClick = () => {
@@ -80,17 +75,7 @@ function CloseButton() {
   };
   return (
     <button className="close-button" onClick={handleClick}>
-      <img
-        src={X}
-        alt="close menu"
-        style={{
-          width: "16px",
-          height: "16px",
-          position: "relative",
-          top: "30%",
-          left: "0",
-        }}
-      />
+      <CLoseX />
     </button>
   );
 }
@@ -105,10 +90,3 @@ export function ShowModalButton({ onOpen, body, header, buttonText }) {
   };
   return <button onClick={handleClick}>{buttonText}</button>;
 }
-
-ShowModalButton.propTypes = {
-  body: PropTypes.node.isRequired,
-  header: PropTypes.string,
-  onOpen: PropTypes.func,
-  buttonText: PropTypes.string,
-};
