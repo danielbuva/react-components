@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import "./Layout.css";
 import GoalieLogo from "../GoalieLogo";
+import NavButtons from "../NavButtons";
 
 const Layout = ({ children }) => {
   return (
@@ -9,6 +10,9 @@ const Layout = ({ children }) => {
         <div id="content-left">
           <div id="logo-div">
             <GoalieLogo />
+          </div>
+          <div>
+            <NavButtons />
           </div>
         </div>
       </div>

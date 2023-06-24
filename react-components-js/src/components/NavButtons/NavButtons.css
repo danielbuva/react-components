@@ -1,0 +1,40 @@
+.nav-link-container {
+  width: 275px;
+  padding: 5px 0 0 0;
+}
+
+.nav-link-container:hover > .nav-link-content {
+  background-color: #181818;
+}
+
+.nav-link-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 10px 17px 14px;
+  width: fit-content;
+  height: 30px;
+  border-radius: 9999px;
+  color: aliceblue;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  margin: 0;
+}
+
+.nav-text {
+  font-size: 20px;
+  padding-right: 12px;
+}
+
+@media only screen and (max-width: 1298px) {
+  .nav-link-container {
+    width: fit-content;
+  }
+  .nav-text {
+    display: none;
+  }
+}
