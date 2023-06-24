@@ -24,3 +24,7 @@
   cursor: pointer;
   user-select: none;
 }
+
+.theme-choice input {
+  cursor: pointer;
+}
