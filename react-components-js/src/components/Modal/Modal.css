@@ -5,6 +5,13 @@
   overflow-x: hidden;
   word-wrap: break-word;
   border: 1px solid;
+}
+
+#light #modal {
+  background-color: #fff;
+}
+
+#black #modal {
   background-color: #000;
 }
 
@@ -27,16 +34,27 @@
   height: 40px;
   display: flex;
   justify-content: center;
-  color: #ffffff;
   cursor: pointer;
   position: relative;
   user-select: none;
+}
+
+#light .close-button {
+  color: #0f1419;
+}
+
+#black .close-button {
+  color: #fff;
 }
 
 .close-button:active {
   outline: none;
 }
 
-.close-button:hover {
+#light .close-button:hover {
+  background-color: #e7e7eb;
+}
+
+#black .close-button:hover {
   background-color: #202020;
 }

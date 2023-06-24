@@ -9,8 +9,13 @@
   margin: 1.5rem;
   height: 55px;
   width: 450px;
-  background-color: #000;
   border-radius: 6px;
+}
+
+#black .inputsmall,
+#black .inputinvalid,
+#black .inputsmallinvalid {
+  background-color: #000;
 }
 
 .label {
@@ -31,10 +36,16 @@
   border: none;
   border-radius: 6px;
   outline: none;
-  background-color: #000;
   border: solid 1px #535353;
   outline: #535bf2;
   font-size: 18px;
+}
+
+#black .control,
+#black .controlsmall,
+#black .controlsmallinvalid,
+#black .controlinvalid {
+  background-color: #000;
 }
 
 .controlsmallinvalid,

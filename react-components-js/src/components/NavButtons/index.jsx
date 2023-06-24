@@ -26,7 +26,7 @@ const NavButtons = () => {
 
 function NavButton({ icon, text, to }) {
   return (
-    <NavLink to={to} className="nav-link">
+    <NavLink to={to}>
       <div className="nav-link-container">
         <div className="nav-link-content">
           {icon}
@@ -43,12 +43,12 @@ function NavOption({ icon, text }) {
 
   return (
     <>
-      <div className="nav-link-container">
-        <div
-          className="nav-link-content"
-          ref={buttonRef}
-          onClick={() => setShow(!show)}
-        >
+      <div
+        className="nav-link-container"
+        ref={buttonRef}
+        onClick={() => setShow(!show)}
+      >
+        <div className="nav-link-content">
           {icon}
           <p className="nav-text">{text}</p>
         </div>
@@ -78,7 +78,7 @@ function MenuItem({ icon, text, onClick }) {
   return (
     <div className="menu-item" onClick={onClick}>
       {icon}
-      <p className="">{text}</p>
+      {text}
     </div>
   );
 }

@@ -3,10 +3,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #000;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -58,8 +54,8 @@ button:hover {
   border-color: #646cff;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
+/* @media (prefers-color-scheme: light) { */
+/* :root {
     color: #213547;
     background-color: #ffffff;
   }
@@ -68,5 +64,66 @@ button:hover {
   }
   button {
     background-color: #f9f9f9;
-  }
+  } */
+
+#light {
+  color-scheme: light;
+  background-color: #ffffff;
+  height: 100%;
 }
+
+#light button {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+#light .nav-link-content {
+  color: #0f1419;
+}
+
+#light .nav-link-container:hover > .nav-link-content {
+  background-color: #e7e7eb;
+}
+
+#light .icon {
+  fill: #0f1419;
+}
+
+#light .menu {
+  box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px,
+    rgba(101, 119, 134, 0.15) 0px 0px 3px 1px;
+}
+
+#light .menu-item:hover {
+  background-color: #e7e7eb;
+}
+/* } */
+
+/* @media (prefers-color-scheme: dark) { */
+#black {
+  color-scheme: dark;
+  background-color: #000;
+  color: rgba(255, 255, 255, 0.87);
+  height: 100%;
+}
+
+#black .nav-link-content {
+  color: #e7e9ea;
+}
+
+#black .nav-link-container:hover > .nav-link-content {
+  background-color: #181818;
+}
+
+#black .icon {
+  fill: #e7e9ea;
+}
+
+#black .menu {
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px,
+    rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
+}
+
+#black .menu-item:hover {
+  background-color: #181818;
+}
+/* } */
