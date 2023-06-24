@@ -57,7 +57,10 @@ function NavOption({ icon, text }) {
         <MenuItem
           icon={<Display />}
           text="Display"
-          onClick={() => showModal(<DisplaySettings />)}
+          onClick={() => {
+            setShow(false);
+            showModal(<DisplaySettings />);
+          }}
         />
       </Menu>
     </>
