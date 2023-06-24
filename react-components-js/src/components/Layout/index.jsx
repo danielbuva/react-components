@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import "./Layout.css";
 import GoalieLogo from "../GoalieLogo";
 import NavButtons from "../NavButtons";
@@ -24,7 +23,4 @@ const Layout = ({ children }) => {
   );
 };
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 export default Layout;

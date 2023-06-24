@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import React, { useState } from "react";
 import Input from "../Input";
 import "./Form.css";
@@ -14,10 +13,6 @@ const FormPage = ({ children }) => {
         : children}
     </div>
   );
-};
-
-FormPage.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 const GetBody = (
@@ -118,10 +113,6 @@ const Form = ({ formState }) => {
       )}
     </form>
   );
-};
-
-Form.propTypes = {
-  formState: PropTypes.object.isRequired,
 };
 
 export default Form;

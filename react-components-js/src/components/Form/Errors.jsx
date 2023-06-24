@@ -1,5 +1,4 @@
 import Warning from "./assets/Warning.svg";
-import PropTypes from "prop-types";
 
 const WarningIcon = () => {
   return (
@@ -67,10 +66,6 @@ const FromErrors = ({ errors }) => {
       </div>
     </div>
   );
-};
-
-FromErrors.propTypes = {
-  errors: PropTypes.object.isRequired,
 };
 
 export default FromErrors;

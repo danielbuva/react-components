@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import "./Input.css";
 
 const Input = ({ placeholder, id, value, onChange, error }) => {
@@ -22,14 +21,6 @@ const Input = ({ placeholder, id, value, onChange, error }) => {
       </label>
     </div>
   );
-};
-
-Input.propTypes = {
-  id: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  error: PropTypes.string,
 };
 
 export default Input;
