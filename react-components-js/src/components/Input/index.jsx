@@ -1,18 +1,21 @@
 import PropTypes from "prop-types";
 import "./Input.css";
-import { useState } from "react";
 
-const Input = ({ placeholder, id }) => {
-  const [text, setText] = useState("");
-  const small = text.length !== 0 ? "small" : "";
+const Input = ({ placeholder, id, value, onChange, error }) => {
+  const small = value.length !== 0 ? "small" : "";
+  const autoComplete = id === "password" ? "new-passwrd" : id;
+  const invalid = error && error.length > 1 ? "invalid" : "";
+
   return (
-    <div className={"input" + small}>
+    <div className={"input" + small + invalid}>
       <input
         type={placeholder}
         id={id}
-        className={"control" + small}
-        value={text}
-        onChange={(e) => setText(e.target.value)}
+        name={id}
+        className={"control" + small + invalid}
+        value={value}
+        onChange={onChange}
+        autoComplete={autoComplete}
       />
       <label htmlFor={id} className="label">
         {placeholder.toLowerCase() === "tel" ? "Phone" : placeholder}
@@ -23,7 +26,10 @@ const Input = ({ placeholder, id }) => {
 
 Input.propTypes = {
   id: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  error: PropTypes.string,
 };
 
 export default Input;
