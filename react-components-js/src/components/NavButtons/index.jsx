@@ -1,39 +1,35 @@
-import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
-import Communities from "./assets/Communities.svg";
-import Profile from "./assets/Profile1.svg";
+import Communities from "./icons/Communities.jsx";
+import Profile from "./icons/Profile.jsx";
+import More from "./icons/More.jsx";
+import Display from "./icons/Display.jsx";
+
+import { useEffect, useRef, useState } from "react";
+import { useModalContext } from "../../hooks/useModalContext";
+import DisplaySettings from "../DisplaySettings";
+
 import "./NavButtons.css";
 
 const NavButtons = () => {
   return (
     <>
       <NavButton
-        icon={Communities}
+        icon={<Communities />}
         text="Communities"
         to="/:id/communities"
-        boxSize="25px"
-        p={0}
       />
-      <NavButton icon={Profile} text="Profile" to="/:id" />
+      <NavButton icon={<Profile />} text="Profile" to="/:id" />
+      <NavOption icon={<More />} text="More" />
     </>
   );
 };
 
-function NavButton({ boxSize, icon, padding, text, to }) {
+function NavButton({ icon, text, to }) {
   return (
     <NavLink to={to} className="nav-link">
       <div className="nav-link-container">
         <div className="nav-link-content">
-          <img
-            alt={text}
-            src={icon}
-            className="icon"
-            style={{
-              height: boxSize,
-              width: boxSize,
-              padding,
-            }}
-          />
+          {icon}
           <p className="nav-text">{text}</p>
         </div>
       </div>
@@ -42,26 +38,74 @@ function NavButton({ boxSize, icon, padding, text, to }) {
 }
 
 function NavOption({ icon, text }) {
+  const { buttonRef, menuRef, setShow, show } = useMenu();
+  const { showModal } = useModalContext();
+
   return (
-    <div className="nav-link-container">
-      <div className="nav-link-content">
-        <img alt={text} src={icon} className="icon" />
-        <p className="nav-text">{text}</p>
+    <>
+      <div className="nav-link-container">
+        <div
+          className="nav-link-content"
+          ref={buttonRef}
+          onClick={() => setShow(!show)}
+        >
+          {icon}
+          <p className="nav-text">{text}</p>
+        </div>
       </div>
+      <Menu isOpen={show} menuRef={menuRef}>
+        <MenuItem
+          icon={<Display />}
+          text="Display"
+          onClick={() => showModal(<DisplaySettings />)}
+        />
+      </Menu>
+    </>
+  );
+}
+
+function Menu({ children, isOpen, menuRef }) {
+  if (!isOpen) return null;
+
+  return (
+    <div ref={menuRef} className="menu">
+      {children}
     </div>
   );
 }
 
-NavOption.propTypes = {
-  icon: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-};
+function MenuItem({ icon, text, onClick }) {
+  return (
+    <div className="menu-item" onClick={onClick}>
+      {icon}
+      <p className="">{text}</p>
+    </div>
+  );
+}
 
-NavButton.propTypes = {
-  boxSize: PropTypes.string,
-  icon: PropTypes.string.isRequired,
-  padding: PropTypes.number.isRequired,
-  text: PropTypes.string.isRequired,
-  to: PropTypes.string,
-};
+function useMenu() {
+  const [show, setShow] = useState(false);
+  const buttonRef = useRef(null);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const closeMenu = (e) => {
+      if (
+        buttonRef.current &&
+        !buttonRef.current.contains(e.target) &&
+        menuRef.current &&
+        !menuRef.current.contains(e.target)
+      ) {
+        setShow(false);
+      }
+    };
+
+    document.addEventListener("click", closeMenu);
+
+    return () => document.removeEventListener("click", closeMenu);
+  }, []);
+
+  return { buttonRef, setShow, show, menuRef };
+}
+
 export default NavButtons;
