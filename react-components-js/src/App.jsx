@@ -1,5 +1,6 @@
 import "./App.css";
 import Form from "./components/Form";
+import Layout from "./components/Layout";
 import { ShowModalButton } from "./components/Modal";
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
   };
 
   return (
-    <>
+    <Layout>
       <ShowModalButton
         body={<Form formState={formState} />}
         buttonText="show modal"
@@ -38,7 +39,7 @@ function App() {
         buttonText="show modal"
         header="yo"
       />
-    </>
+    </Layout>
   );
 }
 

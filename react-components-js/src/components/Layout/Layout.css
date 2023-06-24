@@ -1,0 +1,43 @@
+#layout {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+#left {
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+  justify-content: flex-end;
+}
+
+#content-left {
+  width: 275px;
+}
+
+#logo-div {
+  flex-grow: 1;
+  display: flex;
+}
+
+#main {
+  border-left: solid 1px #ccc;
+  border-right: solid 1px #ccc;
+  width: 600px;
+}
+
+#right {
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+}
+
+#content-right {
+  width: 350px;
+}
