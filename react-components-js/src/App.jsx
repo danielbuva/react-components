@@ -27,6 +27,15 @@ function App() {
     password: { value: "", msg: "password is required" },
   };
 
+  const formState2 = {
+    name: { value: "", msg: "name is required" },
+    email: { value: "", msg: "email is required" },
+    password: { value: "", msg: "password is required" },
+    password1: { value: "", msg: "password is required" },
+    password2: { value: "", msg: "password is required" },
+    password3: { value: "", msg: "password is required" },
+  };
+
   return (
     <Layout>
       <ShowModalButton
@@ -36,6 +45,11 @@ function App() {
       />
       <ShowModalButton
         body={<Form formState={formState1} />}
+        buttonText="show modal"
+        header="yo"
+      />
+      <ShowModalButton
+        body={<Form formState={formState2} />}
         buttonText="show modal"
         header="yo"
       />
