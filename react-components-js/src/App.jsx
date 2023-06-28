@@ -2,6 +2,7 @@ import "./App.css";
 import Form from "./components/Form";
 import Layout from "./components/Layout";
 import { ShowModalButton } from "./components/Modal";
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
   const formState = {
@@ -38,7 +39,7 @@ function App() {
 
   return (
     <Layout>
-      <ShowModalButton
+      {/* <ShowModalButton
         body={<Form formState={formState} />}
         buttonText="show modal"
         header="yo"
@@ -52,7 +53,8 @@ function App() {
         body={<Form formState={formState2} />}
         buttonText="show modal"
         header="yo"
-      />
+      /> */}
+      <ProfilePage />
     </Layout>
   );
 }
