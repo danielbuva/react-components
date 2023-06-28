@@ -44,4 +44,11 @@
   .nav-text {
     display: none;
   }
+  .nav-link-content {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    padding: 12px;
+    justify-content: center;
+  }
 }

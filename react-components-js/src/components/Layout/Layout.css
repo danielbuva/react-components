@@ -59,6 +59,12 @@
 
 @media only screen and (max-width: 1022px) {
   #content-right-container {
-    display: 50px;
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 988px) {
+  #content-right-container {
+    display: none;
   }
 }
