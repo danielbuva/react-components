@@ -23,6 +23,7 @@
 
 #content-left {
   position: fixed;
+  margin-top: 5px;
 }
 
 #logo-div {

@@ -73,7 +73,7 @@ button:hover {
 }
 
 #light button {
-  color: white;
+  color: #fff;
 }
 
 #light .nav-link-content {
@@ -81,7 +81,7 @@ button:hover {
 }
 
 #light .nav-link-container:hover > .nav-link-content {
-  background-color: #e7e7eb;
+  background-color: #f3f3f7;
 }
 
 #light .icon {
@@ -94,7 +94,7 @@ button:hover {
 }
 
 #light .menu-item:hover {
-  background-color: #e7e7eb;
+  background-color: #f3f3f7;
 }
 /* } */
 
@@ -102,7 +102,7 @@ button:hover {
 #black {
   color-scheme: dark;
   background-color: #000;
-  color: rgba(255, 255, 255, 0.87);
+  color: #fff;
 }
 
 #black .nav-link-content {
@@ -126,3 +126,15 @@ button:hover {
   background-color: #181818;
 }
 /* } */
+
+#goalie {
+  cursor: pointer;
+  padding: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+
+#goalie:hover {
+  background-color: #f3f3f7;
+}

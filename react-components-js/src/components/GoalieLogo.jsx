@@ -3,6 +3,7 @@ import GoalieRed from "../assets/GoalieFullRed.svg";
 import GoalieBlue from "../assets/GoalieFullBlue.svg";
 import GoalieGreen from "../assets/GoalieFullGreen.svg";
 import GoaliePink from "../assets/GoalieFullPink.svg";
+import { NavLink } from "react-router-dom";
 
 const randomInt = (min, max) => {
   min = Math.ceil(min);
@@ -11,22 +12,25 @@ const randomInt = (min, max) => {
 };
 
 const GoalieLogo = () => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(
+    parseInt(localStorage.getItem("logo")) ?? 0
+  );
   const colors = [GoalieRed, GoalieBlue, GoalieGreen, GoaliePink];
+  const onClick = () => {
+    const randomIndex = randomInt(0, 3);
+    setIndex(randomIndex);
+    localStorage.setItem("logo", randomIndex.toString());
+  };
 
   return (
-    <img
-      alt="Goalie Logo"
-      src={colors[index]}
-      style={{
-        cursor: "pointer",
-        padding: "10px 2px 2px 2px",
-        width: "42px",
-      }}
-      onClick={() => {
-        setIndex(randomInt(0, 3));
-      }}
-    />
+    <NavLink to="/">
+      <img
+        alt="Goalie Logo"
+        src={colors[index]}
+        onClick={onClick}
+        id="goalie"
+      />
+    </NavLink>
   );
 };
 
