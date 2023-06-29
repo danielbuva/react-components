@@ -56,7 +56,7 @@ function App() {
         header="yo"
       /> */}
       <Switch>
-        <Route component={() => <>landing page!!! :3</>} path="/home" />
+        <Route component={() => <>home page!!! :3</>} path="/home" />
         <Route
           component={() => <>challenges comming soon</>}
           path="/challenges"
