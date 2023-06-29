@@ -3,6 +3,7 @@ import Communities from "./icons/Communities.jsx";
 import Profile from "./icons/Profile.jsx";
 import More from "./icons/More.jsx";
 import Display from "./icons/Display.jsx";
+import Challenges from "./icons/Challenges.jsx";
 
 import { useEffect, useRef, useState } from "react";
 import { useModalContext } from "../../hooks/useModalContext";
@@ -14,7 +15,7 @@ const NavButtons = () => {
   return (
     <>
       <NavButton
-        icon={<Communities />}
+        icon={<Challenges />}
         text="Challenges"
         to="/challenges"
       />
