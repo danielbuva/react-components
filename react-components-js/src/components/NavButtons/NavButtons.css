@@ -22,6 +22,10 @@
   padding-top: 10px;
 }
 
+.active .nav-text {
+  font-weight: 700;
+}
+
 .menu {
   border-radius: 12px;
   overflow: hidden;

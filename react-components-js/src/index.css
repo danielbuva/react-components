@@ -135,6 +135,10 @@ button:hover {
   border-radius: 100%;
 }
 
-#goalie:hover {
+#light #goalie:hover {
   background-color: #f3f3f7;
+}
+
+#black #goalie:hover {
+  background-color: #181818;
 }
