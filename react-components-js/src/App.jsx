@@ -64,7 +64,7 @@ function App() {
           component={() => <>communites comming soon</>}
           path="/communities"
         />
-        <Route component={ProfilePage} path="/:id" />
+        <Route component={ProfilePage} path="/:userId" />
       </Switch>
     </Layout>
   );

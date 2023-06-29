@@ -25,7 +25,7 @@ const NavButtons = () => {
         to="/communities"
       />
       <NavButton icon={<Profile />} text="Profile" to="/danibuva" />
-      <NavOption icon={<More />} text="More" />
+      <NavOption />
     </>
   );
 };
@@ -43,7 +43,7 @@ function NavButton({ icon, text, to }) {
   );
 }
 
-function NavOption({ icon, text }) {
+function NavOption() {
   const { buttonRef, menuRef, setShow, show } = useMenu();
   const { showModal } = useModalContext();
 
@@ -55,8 +55,10 @@ function NavOption({ icon, text }) {
         onClick={() => setShow(!show)}
       >
         <div className="nav-link-content">
-          {icon}
-          <p className="nav-text">{text}</p>
+          <div style={{ paddingTop: "10px" }}>
+            <More isActive={show} />
+          </div>
+          <p className="nav-text">More</p>
         </div>
       </div>
       <Menu isOpen={show} menuRef={menuRef}>
