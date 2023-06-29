@@ -41,6 +41,9 @@
   display: flex;
   flex-grow: 1;
   height: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+  justify-content: flex-start;
 }
 
 #content-right-container {
@@ -49,6 +52,16 @@
 
 #content-right {
   position: fixed;
+}
+
+#credits {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  opacity: 0.5;
+  padding: 20px;
+  gap: 5px;
+  font-size: 13px;
 }
 
 @media only screen and (max-width: 1298px) {
