@@ -2,6 +2,7 @@ import { useState } from "react";
 import Avatar from "../Avatar";
 import "./index.css";
 import Tabs, { TabIndicator, Tab } from "../Tabs";
+import Posts, { Post } from "../Post";
 
 export default function ProfilePage() {
   const [tabIndex, setTabIndex] = useState(0);
@@ -40,7 +41,12 @@ export default function ProfilePage() {
           <Tab text="Acomplished" />
         </Tabs>
       </div>
-      <div className="profile-page-bottom-half"></div>
+      <div className="profile-page-bottom-half">
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+      </div>
     </div>
   );
 }
