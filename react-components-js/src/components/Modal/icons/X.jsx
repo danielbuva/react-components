@@ -1,7 +1,7 @@
-import { useColorMode } from "../../../hooks/useColorMode";
+import { useTheme } from "../../../hooks/useTheme";
 
 function CloseX() {
-  const { theme } = useColorMode();
+  const { theme } = useTheme();
   const stroke = theme === "light" ? "#0f1419" : "#e7e9ea";
   return (
     <svg

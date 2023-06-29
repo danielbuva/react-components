@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./DisplaySettings.css";
-import { useColorMode } from "../../hooks/useColorMode";
+import { useTheme } from "../../hooks/useTheme";
 
 function DisplaySettings() {
   const [color, setColor] = useState("");
   const [theme, setTheme] = useState("");
 
-  const { setToLightMode, setToBlackMode } = useColorMode();
+  const { setToLightMode, setToBlackMode } = useTheme();
 
   const handleColorPick = (e) => {
     setColor(e.target.value);

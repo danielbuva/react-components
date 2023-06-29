@@ -1,4 +1,4 @@
-import { ThemeContext } from "../hooks/useColorMode";
+import { ThemeContext } from "../hooks/useTheme";
 import { useState } from "react";
 
 export function ColorProvider({ children }) {

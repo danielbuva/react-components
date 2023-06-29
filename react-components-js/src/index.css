@@ -102,11 +102,11 @@ button:hover {
 #black {
   color-scheme: dark;
   background-color: #000;
-  color: #fff;
+  color: #d9dbd6;
 }
 
 #black .nav-link-content {
-  color: #e7e9ea;
+  color: #d9dbd6;
 }
 
 #black .nav-link-container:hover > .nav-link-content {

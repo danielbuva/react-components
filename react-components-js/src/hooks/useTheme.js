@@ -2,7 +2,7 @@ import { createContext, useContext } from "react";
 
 export const ThemeContext = createContext(null);
 
-export function useColorMode() {
+export function useTheme() {
   const context = useContext(ThemeContext);
   if (!context) {
     throw new Error(
@@ -10,4 +10,9 @@ export function useColorMode() {
     );
   }
   return context;
+}
+
+export function useColorMode(lightColor, darkColor) {
+  const { theme } = useTheme();
+  return theme === "light" ? lightColor : darkColor;
 }
