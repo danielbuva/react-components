@@ -4,17 +4,17 @@ import { useTheme } from "../../hooks/useTheme";
 
 function DisplaySettings() {
   const [color, setColor] = useState("");
-  const [theme, setTheme] = useState("");
+  // const [theme, setTheme] = useState("");
 
-  const { setToLightMode, setToBlackMode } = useTheme();
+  const { setToLightMode, setToBlackMode, theme } = useTheme();
 
   const handleColorPick = (e) => {
     setColor(e.target.value);
   };
 
-  const handleThemePick = (e) => {
-    setTheme(e.target.value);
-  };
+  // const handleThemePick = (e) => {
+  //   setTheme(e.target.value);
+  // };
 
   return (
     <>
@@ -88,7 +88,7 @@ function DisplaySettings() {
           <input
             className="theme-radio"
             type="radio"
-            onChange={handleThemePick}
+            // onChange={handleThemePick}
             onClick={setToLightMode}
             checked={theme === "light"}
             value="light"
@@ -99,7 +99,7 @@ function DisplaySettings() {
           <input
             className="theme-radio"
             type="radio"
-            onChange={handleThemePick}
+            // onChange={handleThemePick}
             checked={theme === "dim"}
             value="dim"
           />
@@ -109,7 +109,7 @@ function DisplaySettings() {
           <input
             className="theme-radio"
             type="radio"
-            onChange={handleThemePick}
+            // onChange={handleThemePick}
             onClick={setToBlackMode}
             checked={theme === "black"}
             value="black"
