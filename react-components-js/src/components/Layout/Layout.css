@@ -32,10 +32,18 @@
 }
 
 #main {
-  border-left: solid 1px #ccc;
-  border-right: solid 1px #ccc;
   width: 600px;
   height: 2000px;
+}
+
+#light #main {
+  border-left: solid 1px #eff3f4;
+  border-right: solid 1px #eff3f4;
+}
+
+#black #main {
+  border-left: solid 1px #2f3336;
+  border-right: solid 1px #2f3336;
 }
 
 #right {
