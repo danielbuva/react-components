@@ -15,10 +15,15 @@ const NavButtons = () => {
     <>
       <NavButton
         icon={<Communities />}
-        text="Communities"
-        to="/:id/communities"
+        text="Challenges"
+        to="/challenges"
       />
-      <NavButton icon={<Profile />} text="Profile" to="/:id" />
+      <NavButton
+        icon={<Communities />}
+        text="Communities"
+        to="/communities"
+      />
+      <NavButton icon={<Profile />} text="Profile" to="/danibuva" />
       <NavOption icon={<More />} text="More" />
     </>
   );
