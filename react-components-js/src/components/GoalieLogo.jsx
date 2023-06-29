@@ -25,7 +25,7 @@ const GoalieLogo = () => {
   };
 
   return (
-    <NavLink to="/" onClick={onClick}>
+    <NavLink to="/home" onClick={onClick}>
       <div id="goalie">{logo[index]}</div>
     </NavLink>
   );

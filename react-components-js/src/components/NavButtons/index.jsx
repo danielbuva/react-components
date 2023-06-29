@@ -4,6 +4,7 @@ import Profile from "./icons/Profile.jsx";
 import More from "./icons/More.jsx";
 import Display from "./icons/Display.jsx";
 import Challenges from "./icons/Challenges.jsx";
+import Home from "./icons/Home.jsx";
 
 import { useEffect, useRef, useState } from "react";
 import { useModalContext } from "../../hooks/useModalContext";
@@ -14,6 +15,7 @@ import "./NavButtons.css";
 const NavButtons = () => {
   return (
     <>
+      <NavButton icon={<Home />} text="Home" to="/home" />
       <NavButton
         icon={<Challenges />}
         text="Challenges"
